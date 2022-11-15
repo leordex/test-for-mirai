@@ -2,7 +2,7 @@
 
 How to use
 
-1. Create new server in nginx, whatever. Index file located in frontend/web.
+1. Create new server for project in nginx, apache, whatever. Index file located in frontend/web.
 2. Run composer install.
 3. Add database credentials to frontend/config/database.php.
 4. Add timezonedb credentials to frontend/config/source.php
