@@ -1,0 +1,32 @@
+{
+  "name": "vagrant/dst",
+  "description": "Daylight saving time API",
+  "type": "project",
+  "require": {
+    "nesbot/carbon": "^2.63",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "ext-http": "*",
+    "yogarine/doctrine-annotation-autoload": "^0.3.0",
+    "jms/serializer": "^1.14",
+    "guzzlehttp/guzzle": "^6.5"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Dst\\": "src/",
+      "frontend\\": "frontend/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Leordex"
+    }
+  ],
+  "minimum-stability": "stable",
+  "config": {
+    "allow-plugins": {
+      "yogarine/doctrine-annotation-autoload": true
+    }
+  }
+}
