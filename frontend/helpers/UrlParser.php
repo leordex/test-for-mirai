@@ -6,7 +6,7 @@ use frontend\controllers\HttpServerException;
 
 class UrlParser
 {
-    private const URI_ACTION_KEY = 1;
+    private const URI_ACTION_KEY = 2;
     private const ACTION_PREFIX = 'action';
 
     /**

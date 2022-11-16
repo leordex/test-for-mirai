@@ -4,7 +4,7 @@ namespace Dst\services\common\obtainers;
 
 use Dst\interactions\timezonedb\getTimezone\dto\TimezoneDto;
 use Dst\interactions\timezonedb\getTimezone\interactions\TimezonedbTimezoneGetInteraction;
-use Dst\repositories\CityRepository;
+use Dst\dao\CityDao;
 use Dst\services\ServiceException;
 use Throwable;
 
@@ -16,19 +16,19 @@ class TimezoneDataObtainer
     private $timezonedbTimezoneGetInteraction;
 
     /**
-     * @var CityRepository
+     * @var CityDao
      */
-    private $cityRepository;
+    private $cityDao;
 
     /**
      * @param TimezonedbTimezoneGetInteraction $timezonedbTimezoneGetInteraction
-     * @param CityRepository $cityRepository
+     * @param CityDao $cityDao
      */
     public function __construct(TimezonedbTimezoneGetInteraction $timezonedbTimezoneGetInteraction,
-                                CityRepository                   $cityRepository)
+                                CityDao                          $cityDao)
     {
         $this->timezonedbTimezoneGetInteraction = $timezonedbTimezoneGetInteraction;
-        $this->cityRepository = $cityRepository;
+        $this->cityDao = $cityDao;
     }
 
     /**
@@ -41,11 +41,11 @@ class TimezoneDataObtainer
     public function obtain(string $cityId, string $timestamp = null): TimezoneDto
     {
         try {
-            $city = $this->cityRepository->find($cityId);
+            $cityDto = $this->cityDao->get($cityId);
 
             return $this->timezonedbTimezoneGetInteraction->interact(
-                $city->latitude,
-                $city->longitude,
+                $cityDto->getLatitude(),
+                $cityDto->getLongitude(),
                 $timestamp
             );
         } catch (Throwable $e) {

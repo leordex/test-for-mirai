@@ -3,7 +3,7 @@
 require __DIR__ . "/../config/bootstrap.php";
 
 use Dst\interactions\timezonedb\getTimezone\interactions\TimezonedbTimezoneGetInteraction;
-use Dst\repositories\CityRepository;
+use Dst\dao\CityDao;
 use Dst\services\common\obtainers\TimezoneDataObtainer;
 use Dst\services\getLocalTime\services\LocalTimeGetService;
 use Dst\services\getTimestamp\services\TimestampGetService;
@@ -24,13 +24,13 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 $sourceConfig = require('../config/source.php');
 
-$cityRepository = new CityRepository($dbConnection);
+$cityDao = new CityDao($dbConnection, $jmsSerializer);
 $timezoneGetInteraction = new TimezonedbTimezoneGetInteraction(
     $sourceConfig['apiKey'],
     new Client(['base_uri' => $sourceConfig['link']]),
     $jmsSerializer
 );
-$timezoneDataObtainer = new TimezoneDataObtainer($timezoneGetInteraction, $cityRepository);
+$timezoneDataObtainer = new TimezoneDataObtainer($timezoneGetInteraction, $cityDao);
 $timestampGetService = new TimestampGetService($timezoneDataObtainer);
 $localTimeGetService = new LocalTimeGetService($timezoneDataObtainer);
 $controller = new ApiController(

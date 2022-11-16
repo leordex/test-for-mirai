@@ -114,10 +114,14 @@ class TimezoneDto
 
     /**
      * @param string $status
+     *
+     * @return TimezoneDto
      */
-    public function setStatus(string $status): void
+    public function setStatus(string $status): TimezoneDto
     {
         $this->status = $status;
+
+        return $this;
     }
 
     /**
@@ -130,10 +134,14 @@ class TimezoneDto
 
     /**
      * @param string|null $message
+     *
+     * @return TimezoneDto
      */
-    public function setMessage(?string $message): void
+    public function setMessage(?string $message): TimezoneDto
     {
         $this->message = $message;
+
+        return $this;
     }
 
     /**
@@ -146,10 +154,14 @@ class TimezoneDto
 
     /**
      * @param string|null $countryCode
+     *
+     * @return TimezoneDto
      */
-    public function setCountryCode(?string $countryCode): void
+    public function setCountryCode(?string $countryCode): TimezoneDto
     {
         $this->countryCode = $countryCode;
+
+        return $this;
     }
 
     /**
@@ -162,10 +174,14 @@ class TimezoneDto
 
     /**
      * @param string|null $countryName
+     *
+     * @return TimezoneDto
      */
-    public function setCountryName(?string $countryName): void
+    public function setCountryName(?string $countryName): TimezoneDto
     {
         $this->countryName = $countryName;
+
+        return $this;
     }
 
     /**
@@ -178,10 +194,14 @@ class TimezoneDto
 
     /**
      * @param string|null $zoneName
+     *
+     * @return TimezoneDto
      */
-    public function setZoneName(?string $zoneName): void
+    public function setZoneName(?string $zoneName): TimezoneDto
     {
         $this->zoneName = $zoneName;
+
+        return $this;
     }
 
     /**
@@ -194,10 +214,14 @@ class TimezoneDto
 
     /**
      * @param string|null $abbrevation
+     *
+     * @return TimezoneDto
      */
-    public function setAbbrevation(?string $abbrevation): void
+    public function setAbbrevation(?string $abbrevation): TimezoneDto
     {
         $this->abbrevation = $abbrevation;
+
+        return $this;
     }
 
     /**
@@ -210,10 +234,14 @@ class TimezoneDto
 
     /**
      * @param int|null $gmtOffset
+     *
+     * @return TimezoneDto
      */
-    public function setGmtOffset(?int $gmtOffset): void
+    public function setGmtOffset(?int $gmtOffset): TimezoneDto
     {
         $this->gmtOffset = $gmtOffset;
+
+        return $this;
     }
 
     /**
@@ -226,10 +254,14 @@ class TimezoneDto
 
     /**
      * @param int|null $dst
+     *
+     * @return TimezoneDto
      */
-    public function setDst(?int $dst): void
+    public function setDst(?int $dst): TimezoneDto
     {
         $this->dst = $dst;
+
+        return $this;
     }
 
     /**
@@ -242,10 +274,14 @@ class TimezoneDto
 
     /**
      * @param int|null $zoneStart
+     *
+     * @return TimezoneDto
      */
-    public function setZoneStart(?int $zoneStart): void
+    public function setZoneStart(?int $zoneStart): TimezoneDto
     {
         $this->zoneStart = $zoneStart;
+
+        return $this;
     }
 
     /**
@@ -258,10 +294,14 @@ class TimezoneDto
 
     /**
      * @param int|null $zoneEnd
+     *
+     * @return TimezoneDto
      */
-    public function setZoneEnd(?int $zoneEnd): void
+    public function setZoneEnd(?int $zoneEnd): TimezoneDto
     {
         $this->zoneEnd = $zoneEnd;
+
+        return $this;
     }
 
     /**
@@ -274,10 +314,14 @@ class TimezoneDto
 
     /**
      * @param int|null $timestamp
+     *
+     * @return TimezoneDto
      */
-    public function setTimestamp(?int $timestamp): void
+    public function setTimestamp(?int $timestamp): TimezoneDto
     {
         $this->timestamp = $timestamp;
+
+        return $this;
     }
 
     /**
@@ -290,10 +334,14 @@ class TimezoneDto
 
     /**
      * @param string|null $formatted
+     *
+     * @return TimezoneDto
      */
-    public function setFormatted(?string $formatted): void
+    public function setFormatted(?string $formatted): TimezoneDto
     {
         $this->formatted = $formatted;
+
+        return $this;
     }
 
     /**
@@ -306,10 +354,14 @@ class TimezoneDto
 
     /**
      * @param int|null $totalPage
+     *
+     * @return TimezoneDto
      */
-    public function setTotalPage(?int $totalPage): void
+    public function setTotalPage(?int $totalPage): TimezoneDto
     {
         $this->totalPage = $totalPage;
+
+        return $this;
     }
 
     /**
@@ -322,9 +374,13 @@ class TimezoneDto
 
     /**
      * @param int|null $currentPage
+     *
+     * @return TimezoneDto
      */
-    public function setCurrentPage(?int $currentPage): void
+    public function setCurrentPage(?int $currentPage): TimezoneDto
     {
         $this->currentPage = $currentPage;
+
+        return $this;
     }
 }

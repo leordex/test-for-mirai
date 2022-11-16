@@ -1,0 +1,7 @@
+suite_namespace: Dst
+actor: UnitTester
+bootstrap: false
+modules:
+    enabled:
+        - Asserts
+    step_decorators: ~        

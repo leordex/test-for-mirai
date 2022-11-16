@@ -1,12 +1,13 @@
 <?php
 
-namespace Dst\repositories;
+namespace Dst\dao;
 
+use Dst\dao\dto\CityDto;
 use Dst\entities\City;
 use PDO;
 use PDOException;
 
-class CityRepository extends BaseRepository
+class CityDao extends BaseDao
 {
     /**
      * @param string $id
@@ -14,7 +15,7 @@ class CityRepository extends BaseRepository
      * @return City
      * @throws PDOException
      */
-    public function find(string $id): City
+    public function get(string $id): CityDto
     {
         $query = <<<SQL
             SELECT * FROM city WHERE id = :id;
@@ -24,9 +25,9 @@ SQL;
         $statement->bindValue(':id', $id);
         $statement->execute();
 
-        $city = new City();
-        $statement->setFetchMode(PDO::FETCH_INTO, $city);
-
-        return $statement->fetch();
+        return $this->getArrayTransformer()->fromArray(
+            $statement->fetch(PDO::FETCH_ASSOC),
+            CityDto::class
+        );
     }
 }
