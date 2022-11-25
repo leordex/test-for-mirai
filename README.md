@@ -1,4 +1,4 @@
-# test-for-mirai
+# timezone-collector
 
 How to use
 
@@ -13,8 +13,3 @@ required params city_id:string, timestamp:int
 b. get-timestamp for getting utc timestamp by local time string
 required params city_id:string, localtime:string
 7. tests starting from dst/src by php ../vendor/codeception/codeception/codecept run
-
-time spent:
-for infrastructure from scratch 6+ hours
-for task functional 1-2 hours
-for test 1-2 hours
